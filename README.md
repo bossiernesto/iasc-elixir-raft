@@ -38,7 +38,7 @@ iex(c@mymachine)> {:ok, _pid} = Raft.start_peer(KVStore, name: :peer3)
 Raft.set_configuration(:peer1,
                       [{ :peer1, :a@altair },
                       { :peer2, :b@altair },
-                      { :peer3, :c@altair }]
+                      { :peer3, :c@altair }])
 ```
 
 elegir un lider...
@@ -60,7 +60,7 @@ y ahora.. matar al lider
 ![](./img/kill_flanders.jpg)
 
 ```elixir
-Raft.stop(leader)
+Raft.stop_peer(leader)
 ```
 
 veamos que pasa si tratamos de leer algo...
